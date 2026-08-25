@@ -40,6 +40,8 @@ The same three questions of deliberately increasing complexity are asked against
 **Data Source:** Single YouTube video transcript (zero-shot object detection & localization using OpenAI's CLIP)
 **Model Used (all turns):** `gemini-2.5-flash`
 
+Note: LiteLLM supports automatic fallback to alternate models when a call hits a rate limit or error. This benchmark deliberately leaves fallback disabled. Keeping one fixed model across every turn and every architecture avoids adding an extra variable to the comparison. If the model could switch mid-run, the token and cost differences between Vector, Graph, and Hybrid RAG would no longer be a clean, controlled comparison.
+
 ### The 3 Questions Used (Identical Across All 3 Architectures)
 1. **Q1 (Simple):** *"What is this video mainly about?"*
 2. **Q2 (Analytical):** *"What are the main points or steps explained in this video, and how do they relate to each other?"*
