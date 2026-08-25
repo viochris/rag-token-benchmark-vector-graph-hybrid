@@ -40,7 +40,7 @@ The same three questions of deliberately increasing complexity are asked against
 **Data Source:** Single YouTube video transcript (zero-shot object detection & localization using OpenAI's CLIP)
 **Model Used (all turns):** `gemini-2.5-flash`
 
-Note: LiteLLM supports automatic fallback to alternate models when a call hits a rate limit or error. This benchmark deliberately leaves fallback disabled. Keeping one fixed model across every turn and every architecture avoids adding an extra variable to the comparison. If the model could switch mid-run, the token and cost differences between Vector, Graph, and Hybrid RAG would no longer be a clean, controlled comparison.
+Note: LiteLLM supports automatic fallback to alternate models on rate limits or errors, but fallback was deliberately left disabled for this benchmark. Keeping a single fixed model across every turn and every architecture avoids introducing an extra variable (a mid-run model switch) that would make the token and cost comparison between Vector, Graph, and Hybrid RAG less controlled.
 
 ### The 3 Questions Used (Identical Across All 3 Architectures)
 1. **Q1 (Simple):** *"What is this video mainly about?"*
@@ -175,7 +175,6 @@ Type your question at the prompt, or type `exit` to end the session.
 * **Small Question Set (N=3):** Three questions is enough to illustrate a complexity-vs-token trend for a portfolio piece, but it is not statistically robust, since no repeated trials or variance measurement were performed.
 * **Single-Run, No Averaging:** Each question was asked once per architecture. LLM generation length (and therefore completion tokens/cost) can vary run-to-run for the same prompt.
 * **Cost Estimation, Not Billed Cost:** Costs are computed via LiteLLM's internal pricing table, which may not always be perfectly in sync with the actual provider invoice.
-* **Full Comparison Achieved:** All three architectures (Vector, Graph, Hybrid) have been benchmarked on the identical transcript and question set, so the comparison this project is built around is complete for this dataset. See the other limitations below on scope.
 
 ---
 
