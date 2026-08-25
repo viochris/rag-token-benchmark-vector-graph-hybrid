@@ -1,0 +1,30 @@
+# --- Environment & Utilities ---
+python-dotenv==1.2.3
+nest-asyncio==1.6.0
+
+# --- LlamaIndex Core & Integrations ---
+llama-index-core==0.14.23
+llama-index-vector-stores-chroma==0.5.5
+llama-index-graph-stores-neo4j==0.7.0
+llama-index-embeddings-google-genai==0.5.1
+llama-index-llms-litellm==0.7.1
+
+# --- Data Ingestion ---
+youtube-transcript-api==1.2.4
+
+# --- Vector Database ---
+chromadb==1.5.9
+
+# --- LLM Routing, Tokenization & Cost Tracking ---
+litellm==1.97.0
+tiktoken==0.14.0
+
+# --- Reranking ---
+sentence-transformers==5.7.0
+
+# --- Persistent Memory (PostgreSQL) ---
+asyncpg==0.31.0
+
+# --- Observability & Tracing ---
+arize-phoenix-otel==0.17.1
+openinference-instrumentation-llama-index==4.4.5
